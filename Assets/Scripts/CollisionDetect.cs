@@ -1,31 +1,27 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CollisionDetect : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
+    public TMP_Text GameOver;
 
-    public GameObject obstacle;
-    public GameObject popUp;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Start()
     {
-        obstacle = GameObject.Find("ObstacleCar");
-
-        popUp = GameObject.Find("PopUpManager");
+        GameOver.gameObject.SetActive(false);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("obstacle"))
+        {
+            EndGame();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void EndGame()
     {
-    
-    }
+        GameOver.gameObject.SetActive(true);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(obstacle);
-
-        if(CompareTag("obstacle"))
-            popUp.SetActive(true);
-
+        Time.timeScale = 0f;
     }
 }
