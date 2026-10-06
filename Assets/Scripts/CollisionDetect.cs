@@ -11,7 +11,7 @@ public class CollisionDetect : MonoBehaviour
     {
         obstacle = GameObject.Find("ObstacleCar");
 
-        popUp = GameObject.Find("Game Over");
+        popUp = GameObject.Find("PopUpManager");
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class CollisionDetect : MonoBehaviour
     {
         Destroy(obstacle);
 
-        if(CompareTag("Player"))
+        if(CompareTag("obstacle"))
             popUp.SetActive(true);
 
     }
