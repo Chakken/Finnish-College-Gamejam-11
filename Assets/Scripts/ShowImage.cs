@@ -1,4 +1,4 @@
-
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine;
 
@@ -8,9 +8,11 @@ public class ShowImage : MonoBehaviour
     public GameObject imageToShow;
 
     [Header("Timer Settings")]
-    public float displayTime = 3;
+    public float displayTime = 8f;
 
-    private Coroutine hideCoroutine;
+    private Coroutine transitionCoroutine;
+
+    private AsyncOperation sceneLoad;
 
     void Start()
     {
@@ -23,31 +25,57 @@ public class ShowImage : MonoBehaviour
         // Show image when button is clicked
         imageToShow.SetActive(true);
 
-        if (hideCoroutine != null) 
+        if (transitionCoroutine != null) 
         {
-            StopCoroutine(hideCoroutine);
+            StopCoroutine(transitionCoroutine);
         }
 
-        hideCoroutine = StartCoroutine(HideAfterDelay());
+        transitionCoroutine = StartCoroutine(LoadSceneSmoothly());
     }
 
-    IEnumerator HideAfterDelay() 
+    IEnumerator LoadSceneSmoothly()
     {
-        yield return new WaitForSeconds(displayTime);
+        // Start loading Scene1 in the background
+        sceneLoad = SceneManager.LoadSceneAsync("Scene1");
 
-        imageToShow.SetActive(false);
+        if (sceneLoad == null)
+        {
+            Debug.LogError("Could not load Scene1!");
+            transitionCoroutine = null;
+            yield break;
+        }
 
-        hideCoroutine = null;
+        // Prevent scene from activating immediately
+        sceneLoad.allowSceneActivation = false;
+
+        // Wait 8 seconds while scene loads
+        float timer = 0f;
+
+        while (timer < displayTime)
+        {
+            timer += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        // Wait until scene is ready
+        while (sceneLoad.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        // Reset time scale
+        Time.timeScale = 1f;
+
+        // Activate Scene1
+        sceneLoad.allowSceneActivation = true;
     }
+
     public void HideUIImage()
     {
-        if (hideCoroutine != null) 
-        { 
-            StopCoroutine(hideCoroutine);
-            hideCoroutine = null;
-        }
+        // Don't cancel an asynchronous load that is already running
+        if (transitionCoroutine != null)
+            return;
 
-        // Hide image
         imageToShow.SetActive(false);
     }
 }
