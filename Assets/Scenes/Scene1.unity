@@ -15315,8 +15315,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "You have been hired as a temporary delivery driver to fill in for driver Dave who hasn't showed up for work. \n\nYour task is to deliver total of 4 boxes around town to different locations and you have been instructed NOT to look inside the cargo."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2867af2832e4d1842904f99ce746a9cd, type: 2}
+  m_sharedMaterial: {fileID: 2785442668728239611, guid: 2867af2832e4d1842904f99ce746a9cd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22354,7 +22354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &406226258
 MonoBehaviour:
   m_ObjectHideFlags: 0
