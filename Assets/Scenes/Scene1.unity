@@ -82935,12 +82935,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.430798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.430798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.430798
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.6
+      value: -25.56
       objectReference: {fileID: 0}
     - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1855607911415901801, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -82978,6 +82990,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2736376009404876683, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ec42434a7f44d14ba0fbace7a9ff319, type: 2}
     - target: {fileID: 7578632051516531796, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: m_Name
       value: GameEndArea
