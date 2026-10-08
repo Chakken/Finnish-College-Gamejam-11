@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollision : MonoBehaviour
 {
     public TMP_Text GameOver;
-
+    
     public void Start()
     {
         GameOver.gameObject.SetActive(false);

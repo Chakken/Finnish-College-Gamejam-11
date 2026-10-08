@@ -9,45 +9,67 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] private GameObject timeIsUpScreen;
 
     private float timeRemaining;
-    private bool timerRunning = true;
+    private bool timerRunning = false;
+    private bool gameIsOver = false;
 
     void Start()
     {
         timeRemaining = startTime;
+        UpdateTimerDisplay();
 
-        timeIsUpScreen.SetActive(false);
+        if (timeIsUpScreen != null)
+            timeIsUpScreen.SetActive(false);
     }
 
     void Update()
     {
-        if (timerRunning)
-        {
+        if (!timerRunning) return;
+        
             timeRemaining -= Time.deltaTime;
 
-            if (timeRemaining <= 0)
+            if (timeRemaining <= 0f)
             {
-                timeRemaining = 0;
-                timerRunning = false;
+                timeRemaining = 0f;
 
                 TimerFinished();
             }
 
-            timerText.text = Mathf.CeilToInt(timeRemaining).ToString();
-        }
+            UpdateTimerDisplay();
     }
 
-    void TimerFinished()
+    public void StartTimer() 
     {
-        Debug.Log("Time's up!");
+        timeRemaining = startTime;
+        timerRunning = true;
+        UpdateTimerDisplay();
+    }
 
+    public void StopTimer() 
+    {
+        timerRunning = false;
+
+        if (timeIsUpScreen != null)
+            timeIsUpScreen.SetActive(true);
+
+        Time.timeScale = 0f;
+    }
+
+    public void TimerFinished()
+    {
         timeIsUpScreen.SetActive(true);
+    }
 
+    void UpdateTimerDisplay() 
+    {
+        if(timerText != null)
+        {
+            int seconds = Mathf.CeilToInt(timeRemaining);
+            timerText.text = seconds.ToString();
+        }
     }
 
     public void RestartGame() 
     {
-        Time.timeScale = 1f;
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
