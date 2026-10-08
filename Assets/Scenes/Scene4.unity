@@ -44512,7 +44512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4941240919024178222, guid: bc34ad14ab5b57649b08d278e3bcbb23, type: 3}
+  m_Sprite: {fileID: 3359845295696628580, guid: 813754faf92ba5e4d9fb172ae3fb3a8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44902,7 +44902,7 @@ RectTransform:
   m_GameObject: {fileID: 812639826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 14.56, y: 14.56, z: 14.56}
+  m_LocalScale: {x: 131.2, y: 131.2, z: 131.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2061414047}
@@ -48709,6 +48709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowImage
   imageToShow: {fileID: 2012298727}
+  displayTime: 3
 --- !u!1001 &883680290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107779,7 +107780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3508832045419975475, guid: 11c2a5427f3ac7e4a82cf60e3a932e65, type: 3}
+  m_Sprite: {fileID: -3419882749068771778, guid: d197a93461560a949803237c68bf12d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
