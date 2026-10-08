@@ -16,7 +16,6 @@ public class GameEndArea : MonoBehaviour
     [SerializeField] private string finalLevelName = "Scene4";
 
     [Tooltip("Scene that loads after completing the final level.")]
-    [SerializeField] private int finalLevelBuildIndex = 3;
     [SerializeField] private string endingSceneName = "End Scene";
 
     private bool gameFinished = false;
@@ -43,8 +42,6 @@ public class GameEndArea : MonoBehaviour
 
         gameFinished = true;
 
-        Debug.Log("Game Finished!");
-
         if (finishText != null)
         {
             finishText.gameObject.SetActive(true);
@@ -64,7 +61,7 @@ public class GameEndArea : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         //If this is the final scene, go to the ending screen
-        if (currentScene.name == finalLevelName) 
+        if (currentScene.name == finalLevelName)
         {
             AsyncOperation endingLoad = SceneManager.LoadSceneAsync(endingSceneName);
 
@@ -80,12 +77,12 @@ public class GameEndArea : MonoBehaviour
                 yield return null;
             }
         }
-        else 
+        else
         {
             //Otherwise load next scene
             int nextSceneIndex = currentScene.buildIndex + 1;
 
-            if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings) 
+            if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
             {
                 Debug.LogError("There is no scenes left!");
 
@@ -93,7 +90,7 @@ public class GameEndArea : MonoBehaviour
             }
             AsyncOperation nextLevelLoad = SceneManager.LoadSceneAsync(nextSceneIndex);
 
-            if (nextLevelLoad == null) 
+            if (nextLevelLoad == null)
             {
                 Debug.LogError("Failed to load next scene");
 

@@ -30,6 +30,17 @@ public class CarAI : MonoBehaviour
 
         direction.y = 0;
 
+        //Check if waypoints have been reached
+        if (direction.magnitude < waypointDistance) 
+        {
+            if (currentWaypoint == waypoints.Length - 1) 
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+
         //Smooth acceleration
         currentSpeed = Mathf.MoveTowards(currentSpeed, moveSpeed, acceleration * Time.fixedDeltaTime);
 

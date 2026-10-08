@@ -13477,8 +13477,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13575,7 +13575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15315,8 +15315,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "You have been hired as a temporary delivery driver to fill in for driver Dave who hasn't showed up for work. \n\nYour task is to deliver total of 4 boxes around town to different locations and you have been instructed NOT to look inside the cargo."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2867af2832e4d1842904f99ce746a9cd, type: 2}
-  m_sharedMaterial: {fileID: 2785442668728239611, guid: 2867af2832e4d1842904f99ce746a9cd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15559,8 +15559,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start Delivery
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22354,7 +22354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &406226258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25034,8 +25034,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: YOU ARE FIRED!!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33066,8 +33066,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Open box
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -72028,7 +72028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -83444,7 +83444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736376009404876683, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2736376009404876683, guid: e3f576506c564e54e87a88ca35cf5d5c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -99788,8 +99788,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -99813,8 +99813,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -111572,8 +111572,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You reached your destination!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -114530,8 +114530,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You crashed!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
+  m_sharedMaterial: {fileID: 2647409519320644132, guid: 4fa5ac603861575429cea26bdf7551a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

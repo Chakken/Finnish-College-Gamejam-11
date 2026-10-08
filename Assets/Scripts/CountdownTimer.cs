@@ -10,8 +10,7 @@ public class CountdownTimer : MonoBehaviour
 
     private float timeRemaining;
     private bool timerRunning = false;
-    private bool gameIsOver = false;
-
+    
     void Start()
     {
         timeRemaining = startTime;
@@ -70,6 +69,6 @@ public class CountdownTimer : MonoBehaviour
 
     public void RestartGame() 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Scene1");
     }
 }
