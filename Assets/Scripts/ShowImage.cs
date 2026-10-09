@@ -1,6 +1,7 @@
+
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine;
 
 public class ShowImage : MonoBehaviour
 {
@@ -10,70 +11,92 @@ public class ShowImage : MonoBehaviour
     [Header("Timer Settings")]
     public float displayTime = 8f;
 
-    private Coroutine transitionCoroutine;
+    [Header("Scene Settings")]
+    public string targetScene = "Scene1";
 
-    private AsyncOperation sceneLoad;
+    private Coroutine transitionCoroutine;
+    private bool isTransitioning = false;
 
     void Start()
     {
-        // Hide image when game starts
         imageToShow.SetActive(false);
     }
 
     public void ShowUIImage()
     {
-        // Show image when button is clicked
+        if (isTransitioning)
+            return;
+
+        isTransitioning = true;
+
+        // Show the image
         imageToShow.SetActive(true);
 
-        if (transitionCoroutine != null) 
+        // Check current scene
+        if (SceneManager.GetActiveScene().name == targetScene)
         {
-            StopCoroutine(transitionCoroutine);
+            // Already in Scene1: just hide image
+            transitionCoroutine =
+                StartCoroutine(HideAfterDelay());
         }
+        else
+        {
+            // Different scene: load Scene1
+            transitionCoroutine =
+                StartCoroutine(LoadSceneSmoothly());
+        }
+    }
 
-        transitionCoroutine = StartCoroutine(LoadSceneSmoothly());
+    IEnumerator HideAfterDelay()
+    {
+        // Wait 8 seconds, even if paused
+        yield return new WaitForSecondsRealtime(displayTime);
+
+        // Hide image
+        imageToShow.SetActive(false);
+
+        isTransitioning = false;
+        transitionCoroutine = null;
     }
 
     IEnumerator LoadSceneSmoothly()
     {
-        // Start loading Scene1 in the background
-        sceneLoad = SceneManager.LoadSceneAsync("Scene1");
+        // Start loading target scene
+        AsyncOperation sceneLoad =
+            SceneManager.LoadSceneAsync(targetScene);
 
         if (sceneLoad == null)
         {
-            Debug.LogError("Could not load Scene1!");
+            Debug.LogError(
+                "Could not load " + targetScene);
+
+            imageToShow.SetActive(false);
+            isTransitioning = false;
             transitionCoroutine = null;
             yield break;
         }
 
-        // Prevent scene from activating immediately
         sceneLoad.allowSceneActivation = false;
 
-        // Wait 8 seconds while scene loads
-        float timer = 0f;
+        // Keep image visible for 8 seconds
+        yield return new WaitForSecondsRealtime(displayTime);
 
-        while (timer < displayTime)
-        {
-            timer += Time.unscaledDeltaTime;
-            yield return null;
-        }
-
-        // Wait until scene is ready
+        // Wait for scene loading
         while (sceneLoad.progress < 0.9f)
         {
             yield return null;
         }
 
-        // Reset time scale
+        // Resume normal time
         Time.timeScale = 1f;
 
-        // Activate Scene1
+        // Activate new scene
         sceneLoad.allowSceneActivation = true;
     }
 
     public void HideUIImage()
     {
-        // Don't cancel an asynchronous load that is already running
-        if (transitionCoroutine != null)
+        if (isTransitioning)
             return;
 
         imageToShow.SetActive(false);

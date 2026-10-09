@@ -4,6 +4,8 @@ public class StartMenuButtons : MonoBehaviour
 {
     public GameObject mainMenu;
 
+    public PauseMenu pauseMenu;
+
     public MonoBehaviour playerMovement;
 
     public CountdownTimer countdownTimer;
@@ -27,6 +29,8 @@ public class StartMenuButtons : MonoBehaviour
         playerMovement.enabled=true;
 
         countdownTimer.StartTimer();
+
+        pauseMenu.StartGameplay();
 
         Time.timeScale = 1.0f;
     }
