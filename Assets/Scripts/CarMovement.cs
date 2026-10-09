@@ -59,15 +59,18 @@ public class CarMovement : MonoBehaviour
         // -------------------------
         // TURN LEFT / RIGHT
         // -------------------------
+        if (Mathf.Abs(forwardInput) > 0.01f)
+        {
+            float turnAmount =
+                turnInput * turnSpeed * Time.fixedDeltaTime;
 
-        float turnAmount =
-            turnInput * turnSpeed * Time.fixedDeltaTime;
+            turnAmount *= Mathf.Sign(forwardInput);
 
-        Quaternion turnRotation =
-            Quaternion.Euler(0f, turnAmount, 0f);
+            Quaternion turnRotation =
+                Quaternion.Euler(0f, turnAmount, 0f);
 
-        rb.MoveRotation(
-            rb.rotation * turnRotation
-        );
+            rb.MoveRotation(
+                rb.rotation * turnRotation);
+        }
     }
 }
